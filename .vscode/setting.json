@@ -1,0 +1,101 @@
+{
+    "editor.minimap.enabled": false,
+    "[shellscript]": {
+        "files.eol": "\n",
+        "editor.tabSize": 2
+    },
+    "[sql]": {
+        "editor.tabSize": 2
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.external.osxExec": "iTerm.app",
+    "explorer.confirmDragAndDrop": false,
+    "files.defaultLanguage": "go",
+    "editor.renderWhitespace": "all",
+    "window.commandCenter": true,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "editor.accessibilitySupport": "off",
+    "git.mergeEditor": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "go.formatTool": "gofumpt",
+    "terminal.integrated.enableMultiLinePasteWarning": "always",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "redhat.telemetry.enabled": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "always",
+            "source.sortImports": "always",
+            "source.addMissingImports.ts": "always",
+            "source.removeUnusedImports": "always"
+        }
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "always",
+            "source.sortImports": "always",
+            "source.addMissingImports.ts": "always",
+            "source.removeUnusedImports": "always"
+    }
+    },
+    "[yaml]": {
+        "editor.formatOnSave": false
+    },
+    "git.confirmSync": false,
+    "[html]": {
+        "editor.formatOnSave": false
+    },
+    "gopls": {
+        "staticcheck": true,
+        "analyses": {
+            "ST1003": false,
+            "ST1000": false,
+            "ST1006": false,
+            "ST1020": false,
+            "SA1019": false
+        }
+    },
+    "go.lintOnSave": "workspace",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "[perl]": {
+        "editor.defaultFormatter": "zhiyuan-lin.simple-perl"
+    },
+    "githubPullRequests.remotes": [
+        "upstream",
+        "origin"
+    ],
+    "githubPullRequests.queries": [
+        {
+            "label": "自分のレビュー待ち",
+            "query": "is:open review-requested:${user}"
+        },
+        {
+            "label": "自分に割り当て済み",
+            "query": "is:open assignee:${user}"
+        },
+        {
+            "label": "自分が作成",
+            "query": "is:open author:${user}"
+        }
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ]
+}
