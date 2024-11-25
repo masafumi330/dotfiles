@@ -28,25 +28,16 @@
         "editor.formatOnType": true
     },
     "redhat.telemetry.enabled": true,
-    "[typescript]": {
+    "[javascript][javascriptreact][typescript][typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
         "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "always",
-            "source.sortImports": "always",
-            "source.addMissingImports.ts": "always",
-            "source.removeUnusedImports": "always"
-        }
+            "source.addMissingImports": "explicit",
+            "source.removeUnused.ts": "explicit",
+            "source.fixAll.eslint": "explicit",
+            "source.sortImports": "explicit"
+        },
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "always",
-            "source.sortImports": "always",
-            "source.addMissingImports.ts": "always",
-            "source.removeUnusedImports": "always"
-    }
     },
     "[yaml]": {
         "editor.formatOnSave": false
