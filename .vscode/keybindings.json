@@ -1,9 +1,9 @@
 // 既定値を上書きするには、このファイル内にキー バインドを挿入しますauto[]
 [
-    // エディタとターミナルをcmd+jで行き来する
     {
         "key": "cmd+j",
         "command": "workbench.action.terminal.focus",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+j",
@@ -11,23 +11,26 @@
         "when": "terminalFocus"
     },
     {
-        "key": "tab",
-        "command": "-workbench.action.terminal.acceptSelectedSuggestion",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+        "key": "ctrl+j",
+        "command": "workbench.action.closePanel",
+        "when": "terminalFocus"
     },
+    // ターミナルの最大化
     {
-        "key": "tab",
-        "command": "-acceptSelectedSuggestion",
-        "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+        "key": "cmd+o",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
     },
+    
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+
     {
         "key": "tab m",
         "command": "editor.emmet.action.expandAbbreviation",
-        "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-    },
-    {
-        "key": "tab",
-        "command": "-editor.emmet.action.expandAbbreviation",
         "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
     },
     {
@@ -55,61 +58,8 @@
         "when": "github.copilot.activated && github.copilot.panelVisible"
     },
     {
-        "key": "tab",
-        "command": "-insertSnippet",
-        "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
-    },
-    {
-        "key": "tab",
-        "command": "-jumpToNextSnippetPlaceholder",
-        "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
-    },
-    {
-        "key": "tab",
-        "command": "-editor.action.inlineSuggest.commit",
-        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-    },
-    {
-        "key": "tab",
-        "command": "-insertBestCompletion",
-        "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
-    },
-    {
-        "key": "tab",
-        "command": "-insertNextSuggestion",
-        "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
-    },
-    {
-        "key": "tab",
-        "command": "-tab",
-        "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-    },
-    {
-        "key": "alt+tab",
-        "command": "editor.action.inlineSuggest.commit"
-    },
-    {
-        "key": "tab",
-        "command": "tab"
-    },
-    {
         "key": "shift+cmd+k",
         "command": "-aipopup.action.modal.generate",
         "when": "editorFocus && !composerBarIsVisible && !composerControlPanelIsVisible"
     },
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-    },
-    {
-        "key": "shift+cmd+]",
-        "command": "-workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-    },
-    {
-        "key": "cmd+o",
-        "command": "workbench.action.toggleMaximizedPanel",
-        "when": "terminalFocus"
-    }
 ]

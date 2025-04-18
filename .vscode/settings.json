@@ -1,0 +1,99 @@
+{
+  "editor.minimap.enabled": false,
+  "[shellscript]": {
+    "files.eol": "\n",
+    "editor.tabSize": 2
+  },
+  "[sql]": {
+    "editor.tabSize": 2
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDelete": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.external.osxExec": "iTerm.app",
+  "explorer.confirmDragAndDrop": false,
+  "files.defaultLanguage": "plaintext",
+  "editor.renderWhitespace": "all",
+  "window.commandCenter": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "git.mergeEditor": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "go.formatTool": "gofumpt",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "settingsSync.ignoredExtensions": [],
+  "settingsSync.ignoredSettings": [],
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": "explicit",
+      "source.removeUnused.ts": "explicit",
+      "source.fixAll.eslint": "explicit"
+      // "source.sortImports": "explicit"
+    }
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "git.confirmSync": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.lintOnSave": "workspace",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[perl]": {
+    "editor.defaultFormatter": "zhiyuan-lin.simple-perl"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.generateTestsFlags": ["-template", "testify"],
+  "workbench.editorAssociations": {
+    "*.rb": "default"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "diffEditor.renderSideBySide": true,
+  "scratchpads.promptForRemoval": false,
+  "files.insertFinalNewline": true,
+  "scm.graph.pageOnScroll": false,
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "outline.collapseItems": "alwaysCollapse",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "zenMode.showTabs": "single",
+  "zenMode.centerLayout": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.showTabs": "single",
+  "workbench.panel.showLabels": false,
+
+  // "jj" = ESC となり、これでノーマルモードに戻れる
+  "vscode-neovim.compositeKeys": {
+    "jj": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+}
