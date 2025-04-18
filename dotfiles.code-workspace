@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"explorer.confirmDelete": false,
+		"terminal.integrated.defaultProfile.osx": "zsh",
+		"explorer.confirmDragAndDrop": false,
+		"files.defaultLanguage": "plaintext",
+		"window.commandCenter": true,
+		"terminal.integrated.env.osx": {
+			"FIG_NEW_SESSION": "1"
+		},
+		"git.mergeEditor": true,
+		"merge-conflict.autoNavigateNextConflict.enabled": true,
+		"terminal.integrated.enableMultiLinePasteWarning": false,
+		"git.confirmSync": false,
+		"workbench.colorTheme": "Visual Studio Dark",
+		"github.copilot.enable": {
+			"*": true,
+			"plaintext": false,
+			"markdown": false,
+			"scminput": false
+		},
+		"workbench.editorAssociations": {
+			"*.rb": "default"
+		},
+		"scratchpads.promptForRemoval": false,
+		"window.zoomLevel": 1,
+		"extensions.experimental.affinity": {
+			"asvetliakov.vscode-neovim": 1
+		},
+		"zenMode.showTabs": "single",
+		"zenMode.centerLayout": false,
+		"workbench.editor.editorActionsLocation": "hidden",
+		"workbench.editor.showTabs": "single",
+		"workbench.panel.showLabels": false,
+		"vscode-neovim.compositeKeys": {
+			"jj": {
+				"command": "vscode-neovim.escape"
+			}
+		}
+	}
+}

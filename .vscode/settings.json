@@ -96,4 +96,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "window.customTitleBarVisibility": "never",
+  "window.nativeTabs": true,
 }
