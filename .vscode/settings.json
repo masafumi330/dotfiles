@@ -98,4 +98,9 @@
   },
   "window.customTitleBarVisibility": "never",
   "window.nativeTabs": true,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "React Ocean Next Extended - Italic",
+  "workbench.preferredLightColorTheme": "Default Light+",
+  "workbench.panel.defaultLocation": "right",
+  "vscode-neovim.revealCursorScrollLine": true,
 }
