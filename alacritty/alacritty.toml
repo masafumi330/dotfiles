@@ -5,13 +5,13 @@ import = [
 
 [window]
 padding = { x = 4, y = 2} # ターミナルの上下左右の余白 
-opacity = 0.8
-blur = true
+opacity = 0.85
+blur = false
 startup_mode = "Fullscreen"
 
 [font]
 normal.family = "Hack Nerd Font"
-size = 14
+size = 15
 offset = { x = 0, y = 4 } # 少し詰まって見えるので、縦方向の文字間を広げる
 
 [terminal]
