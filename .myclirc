@@ -1,0 +1,8 @@
+[main]
+
+key_bindings = vi
+
+# keyword casing preference. Possible values "lower", "upper", "auto"
+keyword_casing = upper
+
+wider_completion_menu = True
