@@ -5,7 +5,7 @@ import = [
 
 [window]
 padding = { x = 4, y = 2} # ターミナルの上下左右の余白 
-opacity = 0.85
+opacity = 0.9
 blur = false
 startup_mode = "Fullscreen"
 
