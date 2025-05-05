@@ -11,7 +11,7 @@ return {
 			"golangci-lint",
 			"gopls",
 			-- SQL
-			"sqlfmt",
+			-- "sqlfmt",
 			-- Perl
 			"perlnavigator",
 		},
