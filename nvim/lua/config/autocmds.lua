@@ -13,6 +13,17 @@ end
 -- https://neovim.io/doc/user/api.html#nvim_create_autocmd()
 -- nvim_create_autocmd({event}, {opts})
 -- event list https://neovim.io/doc/user/autocmd.html#_5.-events
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = augroup("go_organize_imports"),
+	pattern = "*.go",
+	callback = function()
+		vim.lsp.buf.code_action({
+			apply = true,
+			context = { only = { "source.organizeImports" }, diagnostics = {} },
+		})
+	end,
+})
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --     group = augroup("organise_imports"),
 --     pattern = { "*.ts", "*.tsx" },
