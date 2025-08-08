@@ -18,10 +18,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	group = augroup("go_organize_imports"),
 	pattern = "*.go",
 	callback = function()
-		vim.lsp.buf.code_action({
-			apply = true,
-			context = { only = { "source.organizeImports" }, diagnostics = {} },
-		})
+		-- vim.lsp.buf.code_action({
+		-- 	apply = true,
+		-- 	context = { only = { "source.organizeImports" }, diagnostics = {} },
+		-- })
 	end,
 })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
