@@ -11,8 +11,10 @@ config.window_background_opacity = 0.85
 config.initial_cols = 150
 config.initial_rows = 32
 
-config.font_size = 11
+config.font_size = 14
 config.color_scheme = "Tokyo Night"
+
+config.window_decorations = "RESIZE"
 
 -- Finally, return the configuration to wezterm:
 return config
