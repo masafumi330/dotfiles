@@ -10,7 +10,7 @@
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.panel.defaultLocation": "right",
@@ -102,5 +102,4 @@
   "outline.collapseItems": "alwaysCollapse",
   "scratchpads.promptForRemoval": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "settingsSync.ignoredSettings": []
 }
