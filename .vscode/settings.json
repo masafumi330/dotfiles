@@ -40,7 +40,7 @@
     "editor.formatOnSave": false
   },
   "git.confirmSync": false,
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Tokyo Night",
   "[html]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -96,7 +96,6 @@
   },
   "window.customTitleBarVisibility": "never",
   "window.nativeTabs": true,
-  "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "React Ocean Next Extended - Italic",
   "workbench.preferredLightColorTheme": "Visual Studio Dark",
   "workbench.panel.defaultLocation": "right",
@@ -106,4 +105,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.blame.editorDecoration.enabled": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme"
 }
