@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "enkia.tokyo-night",
-    "PKief.material-icon-theme"
+    "PKief.material-icon-theme",
+    "asvetliakov.vscode-neovim"
   ]
 }

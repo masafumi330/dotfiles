@@ -1,20 +1,15 @@
 {
-  // Editor settings
   "editor.accessibilitySupport": "off",
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.unicodeHighlight.ambiguousCharacters": false,
-
-  // Window settings
   "window.commandCenter": true,
   "window.customTitleBarVisibility": "never",
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-
-  // Workbench settings
   "workbench.colorTheme": "Tokyo Night",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.iconTheme": "material-icon-theme",
@@ -23,24 +18,15 @@
   "workbench.editorAssociations": {
     "*.rb": "default"
   },
-
-  // File settings
   "files.defaultLanguage": "plaintext",
   "files.insertFinalNewline": true,
-
-  // Explorer settings
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-
-  // Terminal settings
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-
-  // Git settings
   "git.blame.editorDecoration.enabled": true,
   "git.confirmSync": false,
   "git.mergeEditor": true,
@@ -48,8 +34,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": true,
   "scm.graph.pageOnScroll": false,
-
-  // Language specific settings
   "[go]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
@@ -71,10 +55,12 @@
     }
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
   },
-  "[perl]": {
-    "editor.defaultFormatter": "zhiyuan-lin.simple-perl"
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
   },
   "[shellscript]": {
     "files.eol": "\n",
@@ -86,14 +72,13 @@
   "[yaml]": {
     "editor.formatOnSave": false
   },
-
-  // Go specific settings
   "go.formatTool": "gofumpt",
-  "go.generateTestsFlags": ["-template", "testify"],
+  "go.generateTestsFlags": [
+    "-template",
+    "testify"
+  ],
   "go.lintOnSave": "workspace",
   "go.toolsManagement.autoUpdate": true,
-
-  // GitHub Copilot settings
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
@@ -102,20 +87,14 @@
     "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
-
-  // VSCode Neovim settings
   "vscode-neovim.compositeKeys": {
     "jj": {
       "command": "vscode-neovim.escape"
     }
   },
   "vscode-neovim.revealCursorScrollLine": true,
-
-  // Zen mode settings
   "zenMode.centerLayout": false,
   "zenMode.showTabs": "single",
-
-  // Other settings
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
