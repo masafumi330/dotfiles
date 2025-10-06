@@ -1,5 +1,81 @@
 {
+  // Editor settings
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+
+  // Window settings
+  "window.commandCenter": true,
+  "window.customTitleBarVisibility": "never",
+  "window.nativeTabs": true,
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
+
+  // Workbench settings
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.panel.showLabels": false,
+  "workbench.editorAssociations": {
+    "*.rb": "default"
+  },
+
+  // File settings
+  "files.defaultLanguage": "plaintext",
+  "files.insertFinalNewline": true,
+
+  // Explorer settings
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Terminal settings
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+
+  // Git settings
+  "git.blame.editorDecoration.enabled": true,
+  "git.confirmSync": false,
+  "git.mergeEditor": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
+  "scm.graph.pageOnScroll": false,
+
+  // Language specific settings
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.addMissingImports": "explicit",
+      "source.fixAll.eslint": "explicit",
+      "source.sortImports": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[perl]": {
+    "editor.defaultFormatter": "zhiyuan-lin.simple-perl"
+  },
   "[shellscript]": {
     "files.eol": "\n",
     "editor.tabSize": 2
@@ -7,105 +83,45 @@
   "[sql]": {
     "editor.tabSize": 2
   },
-  "go.toolsManagement.autoUpdate": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "explorer.confirmDelete": false,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.external.osxExec": "iTerm.app",
-  "explorer.confirmDragAndDrop": false,
-  "files.defaultLanguage": "plaintext",
-  "editor.renderWhitespace": "all",
-  "window.commandCenter": true,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.accessibilitySupport": "off",
-  "git.mergeEditor": true,
-  "merge-conflict.autoNavigateNextConflict.enabled": true,
-  "go.formatTool": "gofumpt",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "settingsSync.ignoredSettings": [],
-  "[javascript][javascriptreact][typescript][typescriptreact]": {
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.addMissingImports": "explicit",
-      // "source.removeUnused.ts": "explicit",
-      "source.fixAll.eslint": "explicit",
-      "source.sortImports": "explicit"
-    }
-  },
   "[yaml]": {
     "editor.formatOnSave": false
   },
-  "git.confirmSync": false,
-  "workbench.colorTheme": "Tokyo Night",
-  "[html]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
+  // Go specific settings
+  "go.formatTool": "gofumpt",
+  "go.generateTestsFlags": ["-template", "testify"],
   "go.lintOnSave": "workspace",
-  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "go.toolsManagement.autoUpdate": true,
+
+  // GitHub Copilot settings
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-  "[perl]": {
-    "editor.defaultFormatter": "zhiyuan-lin.simple-perl"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[go]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "golang.go"
-  },
-  "go.generateTestsFlags": ["-template", "testify"],
-  "workbench.editorAssociations": {
-    "*.rb": "default"
-  },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "github.copilot.editor.enableAutoCompletions": true,
-  "diffEditor.renderSideBySide": true,
-  "scratchpads.promptForRemoval": false,
-  "files.insertFinalNewline": true,
-  "scm.graph.pageOnScroll": false,
-  "window.titleBarStyle": "native",
-  "window.zoomLevel": 1,
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "outline.collapseItems": "alwaysCollapse",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "zenMode.showTabs": "single",
-  "zenMode.centerLayout": false,
-  "workbench.editor.editorActionsLocation": "hidden",
-  "workbench.panel.showLabels": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
 
-  // "jj" = ESC となり、これでノーマルモードに戻れる
+  // VSCode Neovim settings
   "vscode-neovim.compositeKeys": {
     "jj": {
       "command": "vscode-neovim.escape"
     }
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "window.customTitleBarVisibility": "never",
-  "window.nativeTabs": true,
-  "workbench.preferredDarkColorTheme": "React Ocean Next Extended - Italic",
-  "workbench.preferredLightColorTheme": "Visual Studio Dark",
-  "workbench.panel.defaultLocation": "right",
   "vscode-neovim.revealCursorScrollLine": true,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+  // Zen mode settings
+  "zenMode.centerLayout": false,
+  "zenMode.showTabs": "single",
+
+  // Other settings
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
   },
-  "git.blame.editorDecoration.enabled": true,
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.fontLigatures": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "outline.collapseItems": "alwaysCollapse",
+  "scratchpads.promptForRemoval": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredSettings": []
 }
