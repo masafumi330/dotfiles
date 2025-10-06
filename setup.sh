@@ -59,6 +59,19 @@ install_lazyvim() {
   fi
 }
 
+apply_vscode_settings() {
+  local settings_src=".vscode/settings.json"
+  local settings_dest="$HOME/Library/Application Support/Code/User/settings.json"
+
+  if [ ! -f "$DOTFILES_DIR/$settings_src" ]; then
+    echo "VS Code settings not found at $DOTFILES_DIR/$settings_src. Skipping."
+    return
+  fi
+
+  echo "Linking VS Code user settings..."
+  link_dotfile "$settings_src" "$settings_dest"
+}
+
 # dotfiles ディレクトリ
 DOTFILES_DIR=$(cd "$(dirname "$0")"; pwd)
 
@@ -84,6 +97,6 @@ link_dotfile .tmux.conf "$HOME/.tmux.conf"
 link_dotfile .myclirc "$HOME/.myclirc"
 link_dotfile nvim "$HOME/.config/nvim"
 link_dotfile alacritty "$HOME/.config/alacritty"
+apply_vscode_settings
 
-echo "Dotfiles setup complete on macOS!"
-
+echo "✅ Dotfiles setup complete on macOS!"
