@@ -105,7 +105,8 @@ link_dotfile .tmux.conf "$HOME/.tmux.conf"
 link_dotfile .myclirc "$HOME/.myclirc"
 link_dotfile nvim "$HOME/.config/nvim"
 link_dotfile alacritty "$HOME/.config/alacritty"
-link_dotfile .codex "$HOME/.codex"
+link_dotfile .codex/AGENTS.md "$HOME/.codex/AGENTS.md"
+link_dotfile .codex/prompts "$HOME/.codex/prompts"
 apply_vscode_settings
 
 echo "✅ Dotfiles setup complete on macOS!"

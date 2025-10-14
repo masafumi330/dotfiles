@@ -6,14 +6,6 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 [tools]
 web_search = true
 
-[[slash_commands]]
-name = "commit"
-description = "Stage all changes and create a Git commit with an auto-generated message."
-command = ["bash", "-lc", "~/.codex/commands/commit.sh \"{input}\""]
-
-[projects."/Users/misawamasafumi/dotfiles"]
-trust_level = "trusted"
-
 # MCP servers
 # [mcp_servers.context7]
 # command = "npx"
