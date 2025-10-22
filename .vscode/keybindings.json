@@ -21,13 +21,11 @@
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
     },
-    
     {
         "key": "cmd+o",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
     },
-
     {
         "key": "tab m",
         "command": "editor.emmet.action.expandAbbreviation",
@@ -62,4 +60,14 @@
         "command": "-aipopup.action.modal.generate",
         "when": "editorFocus && !composerBarIsVisible && !composerControlPanelIsVisible"
     },
+    {
+        "key": "tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "editorTextFocus && inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
+        "key": "tab",
+        "command": "tab",
+        "when": "!inlineSuggestionVisible"
+    }
 ]

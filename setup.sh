@@ -62,14 +62,22 @@ install_lazyvim() {
 apply_vscode_settings() {
   local settings_src=".vscode/settings.json"
   local settings_dest="$HOME/Library/Application Support/Code/User/settings.json"
+  local keybindings_src=".vscode/keybindings.json"
+  local keybindings_dest="$HOME/Library/Application Support/Code/User/keybindings.json"
 
-  if [ ! -f "$DOTFILES_DIR/$settings_src" ]; then
+  if [ -f "$DOTFILES_DIR/$settings_src" ]; then
+    echo "Linking VS Code user settings..."
+    link_dotfile "$settings_src" "$settings_dest"
+  else
     echo "VS Code settings not found at $DOTFILES_DIR/$settings_src. Skipping."
-    return
   fi
 
-  echo "Linking VS Code user settings..."
-  link_dotfile "$settings_src" "$settings_dest"
+  if [ -f "$DOTFILES_DIR/$keybindings_src" ]; then
+    echo "Linking VS Code keybindings..."
+    link_dotfile "$keybindings_src" "$keybindings_dest"
+  else
+    echo "VS Code keybindings not found at $DOTFILES_DIR/$keybindings_src. Skipping."
+  fi
 }
 
 # dotfiles ディレクトリ
