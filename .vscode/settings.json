@@ -102,4 +102,15 @@
   "outline.collapseItems": "alwaysCollapse",
   "scratchpads.promptForRemoval": false,
   "security.workspace.trust.untrustedFiles": "open",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ]
 }
