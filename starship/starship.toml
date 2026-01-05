@@ -1,0 +1,26 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+\n$character"""
+
+[directory]
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = ' [$symbol$branch]($style) '
+
+[git_status]
+format = '[($all_status$ahead_behind)]($style)'
+
+[git_commit]
+tag_symbol = '  '
