@@ -49,8 +49,8 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
-    "markdown": false,
+    "plaintext": true,
+    "markdown": true,
     "scminput": false
   },
   "[perl]": {
@@ -99,7 +99,7 @@
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "React Ocean Next Extended - Italic",
   "workbench.preferredLightColorTheme": "Visual Studio Dark",
-  "workbench.panel.defaultLocation": "right",
+  "workbench.panel.defaultLocation": "bottom",
   "vscode-neovim.revealCursorScrollLine": true,
   "github.copilot.nextEditSuggestions.enabled": true,
   "[javascript]": {

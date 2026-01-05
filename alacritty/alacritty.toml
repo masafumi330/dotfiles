@@ -2,18 +2,17 @@
 import = [
   "~/.config/alacritty/themes/themes/tokyo_night.toml"
 ]
-
+#
 [window]
 padding = { x = 4, y = 2} # ターミナルの上下左右の余白 
-opacity = 0.9
-blur = false
-startup_mode = "Fullscreen"
+opacity = 0.7
+blur = true
 option_as_alt = "Both"
 
 [font]
 normal.family = "Hack Nerd Font"
 size = 15
-offset = { x = 0, y = 4 } # 少し詰まって見えるので、縦方向の文字間を広げる
 
-[terminal]
-shell = { program = "/bin/zsh", args = ["-l", "-c", "tmux a -t 0 || tmux"] }
+#
+# [terminal]
+# shell = { program = "/bin/zsh", args = ["-l", "-c", "tmux a -t 0 || tmux"] }
