@@ -1,8 +1,3 @@
--- Insertモードで jj を ESC にマップ
--- noremap = true: 他に <Esc> に何かマッピングされてても無視
--- silent = true: コマンド実行時にメッセージを表示しない
-vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -24,7 +19,6 @@ require("lazy").setup({
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import/override with your plugins
-		-- { import = "lazyvim.plugins.extras.ai.copilot" },
 		{ import = "plugins" },
 	},
 	defaults = {
@@ -36,7 +30,7 @@ require("lazy").setup({
 		version = false, -- always use the latest git commit
 		-- version = "*", -- try installing the latest stable version for plugins that support semver
 	},
-	-- install = { colorscheme = { "tokyonight", "habamax" } },
+	install = { colorscheme = { "tokyonight", "habamax" } },
 	checker = {
 		enabled = true, -- check for plugin updates periodically
 		notify = false, -- notify on update
