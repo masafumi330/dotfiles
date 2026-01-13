@@ -4,7 +4,7 @@ return {
 		dependencies = {
 			{ "nvim-lua/plenary.nvim", branch = "master" },
 		},
-		lazy = false,
+		event = "VeryLazy",
 		build = "make tiktoken",
 		opts = {
 			model = "gpt-4.1", -- AI model to use
