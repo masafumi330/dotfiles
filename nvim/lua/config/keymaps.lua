@@ -3,4 +3,4 @@
 -- Add any additional keymaps here
 
 -- Insertモードで jj を ESC にマップ
-vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "jk", "<Esc>")
