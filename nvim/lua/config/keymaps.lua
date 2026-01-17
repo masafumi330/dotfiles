@@ -4,3 +4,4 @@
 
 -- Insertモードで jj を ESC にマップ
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("n", "q", "<nop>")
