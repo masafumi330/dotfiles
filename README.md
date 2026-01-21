@@ -1,24 +1,51 @@
-# dotfiles
+# dotfiles (Development Environment 2026)
 
-This is my dotfiles.
+このリポジトリは macOS 上での開発環境「現状 2026」を再現するための dotfiles 集です。Alacritty + tmux + zsh/oh-my-zsh を中心に、Neovim(Lazy.nvim)と GitHub Copilot を軸とした AI ワークフローをまとめています。
 
-# Tools
+## 構成概要
 
-| Category             | Tool                                 |
-| -------------------- | ------------------------------------ |
-| Terminal Emulator    | [Alacritty](https://alacritty.org/)  |
-| Terminal Multiplexer | [tmux](https://github.com/tmux/tmux) |
-| Shell                | [Zsh](https://www.zsh.org/)          |
-| Text Editor          | [Neovim](https://neovim.io/)         |
-| DB client            | [Mycli](https://www.mycli.net/)      |
+| パス / ファイル | 役割 |
+| --- | --- |
+| `.zshrc` | zsh + oh-my-zsh の設定。各プラグインのロードやエイリアスを定義 |
+| `.tmux.conf` | tmux のキーバインドと UI 調整 |
+| `alacritty/` | `alacritty.toml` とテーマ設定 |
+| `nvim/` | LazyVim ベースの Neovim 設定。`lazyvim.json` で Extras を管理 |
 
-# Neovim Plugins
+## Terminal / Shell
 
-I manage my Neovim plugins using [Lazy.vim](https://github.com/folke/lazy.nvim). The following plugins are installed:
+- **Terminal エミュレータ**: [Alacritty](https://alacritty.org/)（Hack Nerd Font + 透過を含むカスタムテーマ）
+- **Terminal Multiplexer**: [tmux](https://github.com/tmux/tmux)（`.tmux.conf` でプレフィックスやステータスラインを統一）
+- **Shell**: zsh + [oh-my-zsh](https://ohmyz.sh/)
+  - プラグイン
+    - `git` — Git エイリアスと補助関数
+    - `docker` — Docker/Compose サブコマンド補助
+    - `zsh-completions` — コマンド補完強化
+    - `zsh-autosuggestions` — 履歴からの自動提案
 
-| Plugin                                                                  | Description                                   |
-| ----------------------------------------------------------------------- | --------------------------------------------- |
-| [avante.nvim](https://github.com/yetone/avante.nvim?tab=readme-ov-file) | to emulate the behaviour of the Cursor AI IDE |
-| [git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim)       | to visualise and resolve conflicts in neovim  |
-| [telescope](https://github.com/nvim-telescope/telescope.nvim)           | fuzzy finder                                  |
-| [mini.surround](https://github.com/echasnovski/mini.surround)           | Fast and feature-rich surround actions        |
+## Neovim (Editor)
+
+- **エディタ**: Neovim 0.9+
+- **Plugin Manager**: [Lazy.nvim](https://github.com/folke/lazy.nvim)
+- **セットアップ方針**: LazyExtras のみを最小構成で追加（シンプルに）
+- **AI**
+  - `lazyvim.plugins.extras.ai.copilot` … コード補完
+  - `lazyvim.plugins.extras.ai.sidekick` … サイドパネルで AI チャット
+- **Language Extras**（よく使う言語に限定）
+  - `lang.go`
+  - `lang.tailwind`
+  - `lang.typescript`
+  - `lang.json`
+  - `lang.markdown`
+
+## AI エージェント
+
+- **GitHub Copilot**（会社で許可されている唯一の AI。エディタ内補完と Copilot Chat を活用）
+
+## ブラウザ
+
+- Arc（メイン。ワークスペース分離）
+- Google Chrome（サブ。検証用）
+
+## TODO(2026現在)
+
+- [] dotfilesをchezmoiで管理する
