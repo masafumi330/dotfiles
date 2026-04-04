@@ -75,7 +75,6 @@ plugins=(
   docker
   zsh-autosuggestions
   gh
-  ghq
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
