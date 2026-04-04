@@ -74,6 +74,8 @@ plugins=(
   git
   docker
   zsh-autosuggestions
+  gh
+  ghq
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -110,3 +112,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+## Aliases -------------------------------------------------------------------
+# Editor
+alias v='nvim'
+
+# Git
+alias gc='git checkout'
+alias gs='git status'
+alias gb='git branch'
+alias ga='git add'
+alias gm='gitmoji -c'
+alias gp='git push'
+alias pull='git pull'
+
+export PATH="$HOME/.local/bin:$PATH"
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
