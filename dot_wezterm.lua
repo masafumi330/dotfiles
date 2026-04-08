@@ -16,6 +16,12 @@ config.color_scheme = "Tokyo Night"
 
 local act = wezterm.action
 
+config.inactive_pane_hsb = {
+	saturation = 0.8,
+}
+
+config.default_cursor_style = "BlinkingBlock"
+
 config.keys = {
 	-- Cmd+D: 縦に分割（左右）
 	{
