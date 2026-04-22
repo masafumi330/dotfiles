@@ -16,8 +16,8 @@ This is my dotfiles!
 # Setup
 
 ```sh
-# 1. Install chezmoi
-brew install chezmoi
+# 1. Install all required
+brew bundle install --file=~/.config/Brewfile
 
 # 2. Apply
 chezmoi init --apply git@github.com/masafumi330/dotfiles
