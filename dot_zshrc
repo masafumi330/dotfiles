@@ -129,6 +129,10 @@ alias pull='git pull'
 
 export PATH="$HOME/.local/bin:$PATH"
 
+## fzf -------------------------------------------------------------------
+# Ctrl+R: コマンド履歴検索 / Ctrl+T: ファイル選択 / Alt+C: ディレクトリ移動
+source <(fzf --zsh)
+
 ## ghq + fzf ---------------------------------------------------------------
 # Ctrl+G で ghq 管理リポジトリを fzf で選択して cd する ZLE ウィジェット
 function _ghq_fzf_widget() {
