@@ -123,9 +123,27 @@ alias gs='git status'
 alias gb='git branch'
 alias ga='git add'
 alias gm='gitmoji -c'
+alias gpfirst='git push -u origin HEAD' # HEAD にすることで「今いるブランチ名を自動で使う」動作に
 alias gp='git push'
 alias pull='git pull'
 
 export PATH="$HOME/.local/bin:$PATH"
+
+## ghq + fzf ---------------------------------------------------------------
+# Ctrl+G で ghq 管理リポジトリを fzf で選択して cd する ZLE ウィジェット
+function _ghq_fzf_widget() {
+  local root repo
+  root=$(ghq root)
+  # ghq list でリポジトリ一覧を取得し、fzf でインタラクティブに選択
+  # --preview でリポジトリ内のファイル一覧を右ペインに表示
+  repo=$(ghq list | fzf --preview "ls -la ${root}/{}" --preview-window=right:50%)
+  if [[ -n "$repo" ]]; then
+    BUFFER="cd ${root}/${repo}"
+    zle accept-line  # 選択後に Enter を自動実行
+  fi
+  zle reset-prompt
+}
+zle -N _ghq_fzf_widget       # 関数を ZLE ウィジェットとして登録
+bindkey '^g' _ghq_fzf_widget # Ctrl+G に割り当て
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
