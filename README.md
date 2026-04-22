@@ -10,6 +10,8 @@ This is my dotfiles!
 | Shell | zsh |
 | Editor | NeoVim |
 | Browser | Arc |
+| Repo manager | ghq |
+| Fuzzy finder | fzf |
 
 # Setup
 
