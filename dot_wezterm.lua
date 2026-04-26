@@ -99,10 +99,10 @@ config.keys = {
 			)
 		end),
 	},
-	-- Ctrl+B, Shift+S: Create new workspace with name
+	-- Create new workspace with name
 	{
-		mods = "LEADER|SHIFT",
-		key = "s",
+		mods = "LEADER",
+		key = "n",
 		action = act.PromptInputLine({
 			description = "(wezterm) Create new workspace:",
 			action = wezterm.action_callback(function(win, pane, name)
