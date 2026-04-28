@@ -116,6 +116,7 @@ RPROMPT='%F{white}[%T%f]'
 ## Aliases -------------------------------------------------------------------
 # Editor
 alias v='nvim'
+alias cat='bat'
 
 # Git
 alias gc='git checkout'
