@@ -44,6 +44,8 @@ end)
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
+	-- Pane
+	{ key = ":", mods = "CTRL", action = act.PaneSelect },
 	-- Cmd+D: 縦に分割（左右）
 	{
 		key = "d",
