@@ -1,0 +1,21 @@
+presets:
+  web-dev:
+    name: Web Development
+    description: nvim, lazygit, claude code, shell, logs
+    backend: wezterm
+    layout:
+      type: horizontal
+      ratio: [1, 1, 1]
+      panes:
+        - name: editor
+          command: nvim
+          focus: true
+        - type: vertical
+          ratio: [1, 1, 1]
+          panes:
+            - name: git
+              command: lazygit
+            - name: shell
+            - name: logs
+        - name: AI
+          command: claude

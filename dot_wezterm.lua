@@ -40,6 +40,7 @@ wezterm.on("update-right-status", function(window, pane)
 	}))
 end)
 
+-- <LEADER> = Ctrl + B
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
@@ -115,6 +116,41 @@ config.keys = {
 		}),
 	},
 }
+
+-- オーバーレイペインでコマンドを実行するヘルパー関数
+local function spawn_overlay_pane(command)
+	return wezterm.action_callback(function(window, pane)
+		local new_pane = pane:split({
+			direction = "Bottom",
+			size = 1.0,
+			args = { os.getenv("SHELL"), "-lc", command },
+		})
+		window:perform_action(act.TogglePaneZoomState, new_pane)
+	end)
+end
+
+-- augment-command-palette イベントでコマンドパレットにカスタムアクションを追加
+wezterm.on("augment-command-palette", function(_, _)
+	local commands = {
+		{
+			brief = "Launch: zsh",
+			icon = "dev_terminal",
+			action = spawn_overlay_pane("zsh"),
+		},
+		{
+			brief = "Layout: vde-layout web-dev (new tab)",
+			icon = "md_view_column",
+			action = wezterm.action_callback(function(_, _)
+				wezterm.background_child_process({
+					os.getenv("SHELL") or "/bin/zsh",
+					"-lic",
+					"vde-layout web-dev",
+				})
+			end),
+		},
+	}
+	return commands
+end)
 
 -- Finally, return the configuration to wezterm:
 return config

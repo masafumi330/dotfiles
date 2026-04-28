@@ -7,6 +7,8 @@ DIR=$(echo "$input" | jq -r '.workspace.current_dir')
 COST=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
 DURATION_MS=$(echo "$input" | jq -r '.cost.total_duration_ms // 0')
+RL_5H=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // 0' | cut -d. -f1)
+RL_7D=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // 0' | cut -d. -f1)
 
 CYAN='\033[36m'
 GREEN='\033[32m'
@@ -21,11 +23,18 @@ elif [ "$PCT" -ge 70 ]; then
   BAR_COLOR="$YELLOW"
 else BAR_COLOR="$GREEN"; fi
 
-FILLED=$((PCT / 10))
-EMPTY=$((10 - FILLED))
-printf -v FILL "%${FILLED}s"
-printf -v PAD "%${EMPTY}s"
-BAR="${FILL// /█}${PAD// /░}"
+make_bar() {
+  local pct=$1 filled empty fill pad
+  filled=$((pct / 10))
+  empty=$((10 - filled))
+  printf -v fill "%${filled}s"
+  printf -v pad "%${empty}s"
+  echo "${fill// /█}${pad// /░}"
+}
+
+BAR=$(make_bar "$PCT")
+BAR_5H=$(make_bar "$RL_5H")
+BAR_7D=$(make_bar "$RL_7D")
 
 MINS=$((DURATION_MS / 60000))
 SECS=$(((DURATION_MS % 60000) / 1000))
@@ -44,4 +53,4 @@ MODEL_DISPLAY="$MODEL"
 [ -n "$EFFORT" ] && MODEL_DISPLAY="$MODEL/$EFFORT"
 echo -e "${CYAN}[$MODEL_DISPLAY]${RESET}  ${DIR##*/}${BRANCH} ${GIT_STATUS}"
 COST_FMT=$(printf '$%.2f' "$COST")
-echo -e "${BAR_COLOR}${BAR}${RESET} ${PCT}% | ${YELLOW}${COST_FMT}${RESET} | ⏱️ ${MINS}m ${SECS}s"
+echo -e "${BAR_COLOR}${BAR}${RESET} ${PCT}% | ${BAR_COLOR}${BAR_5H}${RESET} ${RL_5H}%/5h | ${BAR_COLOR}${BAR_7D}${RESET} ${RL_7D}%/7d"
