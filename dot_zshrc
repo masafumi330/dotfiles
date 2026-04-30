@@ -153,4 +153,7 @@ function _ghq_fzf_widget() {
 zle -N _ghq_fzf_widget       # 関数を ZLE ウィジェットとして登録
 bindkey '^g' _ghq_fzf_widget # Ctrl+G に割り当て
 
+# apply shell integration
+source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
+
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
