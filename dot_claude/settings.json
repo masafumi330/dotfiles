@@ -1,9 +1,4 @@
 {
-  "model": "sonnet[1m]",
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  },
   "permissions": {
     "allow": [
       "Bash",
@@ -19,24 +14,6 @@
       "mcp__aws-documentation-mcp-server",
       "mcp__playwright",
       "mcp__mcp-google-sheets"
-    ],
-    "ask": [
-      "Bash(git rebase:*)",
-      "Bash(git reset:*)",
-      "Bash(git commit:*)",
-      "Bash(gh pr create:*)",
-      "Bash(gh issue create:*)",
-      "Bash(gh release create:*)",
-      "Bash(aws s3 cp:*)",
-      "Bash(aws s3 sync:*)",
-      "Bash(aws s3 mv:*)",
-      "Bash(aws ec2 run-instances:*)",
-      "Bash(aws ec2 start-instances:*)",
-      "Bash(aws ec2 stop-instances:*)",
-      "Bash(aws lambda create-function:*)",
-      "Bash(aws lambda update-function-code:*)",
-      "Bash(aws cloudformation create-stack:*)",
-      "Bash(aws cloudformation update-stack:*)"
     ],
     "deny": [
       "Bash(git push:*)",
@@ -81,12 +58,27 @@
       "Edit(~/.aws/**)",
       "Write(.env*)"
     ],
+    "ask": [
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(git commit:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh issue create:*)",
+      "Bash(gh release create:*)",
+      "Bash(aws s3 cp:*)",
+      "Bash(aws s3 sync:*)",
+      "Bash(aws s3 mv:*)",
+      "Bash(aws ec2 run-instances:*)",
+      "Bash(aws ec2 start-instances:*)",
+      "Bash(aws ec2 stop-instances:*)",
+      "Bash(aws lambda create-function:*)",
+      "Bash(aws lambda update-function-code:*)",
+      "Bash(aws cloudformation create-stack:*)",
+      "Bash(aws cloudformation update-stack:*)"
+    ],
     "defaultMode": "default"
   },
-  "enabledPlugins": {
-    "lua-lsp@claude-plugins-official": true
-  },
-  "effortLevel": "medium",
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -110,5 +102,22 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "lua-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    }
+  },
+  "effortLevel": "medium"
 }
