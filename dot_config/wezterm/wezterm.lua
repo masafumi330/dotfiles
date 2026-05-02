@@ -35,6 +35,17 @@ wezterm.on("augment-command-palette", function(_, _)
 				})
 			end),
 		},
+		{
+			brief = "Layout: vde-layout nippo (new tab)",
+			icon = "md_note_edit",
+			action = wezterm.action_callback(function(_, _)
+				wezterm.background_child_process({
+					os.getenv("SHELL") or "/bin/zsh",
+					"-lic",
+					"vde-layout nippo",
+				})
+			end),
+		},
 	}
 	return commands
 end)

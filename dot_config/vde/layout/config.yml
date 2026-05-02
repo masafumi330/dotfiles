@@ -19,3 +19,17 @@ presets:
             - name: logs
         - name: AI
           command: claude
+
+  nippo:
+    name: Nippo
+    description: Daily report - claude AI + today's nippo file
+    backend: wezterm
+    layout:
+      type: horizontal
+      ratio: [1, 1]
+      panes:
+        - name: ai
+          command: "cd ~/nippo && claude"
+          focus: true
+        - name: editor
+          command: "cd ~/nippo && nvim ~/nippo/$(date +%Y-%m-%d).md"
