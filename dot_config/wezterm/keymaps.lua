@@ -35,15 +35,19 @@ local keys = {
 		mods = "LEADER",
 		key = "s",
 		action = wezterm.action_callback(function(win, pane)
-			-- workspace のリストを作成
-			local workspaces = {}
-			for i, name in ipairs(wezterm.mux.get_workspace_names()) do
-				table.insert(workspaces, {
-					id = name,
-					label = string.format("%d. %s", i, name),
-				})
-			end
+			-- workspace のリストを作成（現在のworkspaceを先頭に）
 			local current = wezterm.mux.get_active_workspace()
+			local workspaces = {}
+			for _, name in ipairs(wezterm.mux.get_workspace_names()) do
+				if name == current then
+					table.insert(workspaces, 1, { id = name, label = name })
+				else
+					table.insert(workspaces, { id = name, label = name })
+				end
+			end
+			for i, ws in ipairs(workspaces) do
+				ws.label = string.format("%d. %s", i, ws.label)
+			end
 			-- 選択メニューを起動
 			win:perform_action(
 				act.InputSelector({
