@@ -6,7 +6,7 @@ local leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
 local keys = {
 	-- Pane
-	{ key = ":", mods = "CTRL", action = act.PaneSelect },
+	{ key = ";", mods = "CTRL", action = act.PaneSelect },
 	-- Cmd+D: 縦に分割（左右）
 	{
 		key = "d",

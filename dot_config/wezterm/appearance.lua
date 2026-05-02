@@ -57,6 +57,7 @@ local appearance = {
 		tab_bar = {
 			inactive_tab_edge = "none",
 		},
+		split = "#ecfa52",
 	},
 
 	font = wezterm.font("HackGen Console NF"),
