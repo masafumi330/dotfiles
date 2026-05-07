@@ -1,0 +1,7 @@
+# MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.35.0/doc/md025.md
+MD025:
+  enabled: false
+  # Heading level
+  level: 1
+  # RegExp for matching title in front matter
+  front_matter_title: "^\\s*title\\s*[:=]"

@@ -78,7 +78,6 @@
     ],
     "defaultMode": "default"
   },
-  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {

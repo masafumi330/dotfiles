@@ -28,7 +28,7 @@ local appearance = {
 
 	-- Tab
 	hide_tab_bar_if_only_one_tab = true,
-	tab_bar_at_bottom = true,
+	-- tab_bar_at_bottom = true,
 	show_new_tab_button_in_tab_bar = false,
 	tab_max_width = 30,
 	use_fancy_tab_bar = true,

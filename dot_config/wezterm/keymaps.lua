@@ -23,7 +23,7 @@ local keys = {
 	{
 		key = "w",
 		mods = "SUPER",
-		action = act.CloseCurrentPane({ confirm = false }),
+		action = act.CloseCurrentPane({ confirm = true }),
 	},
 	-- Vim風Pane移動
 	{ key = "h", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
