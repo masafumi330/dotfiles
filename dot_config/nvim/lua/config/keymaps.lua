@@ -4,3 +4,6 @@
 
 -- Insertモードで jkを ESC にマップ
 vim.keymap.set("i", "jk", "<Esc>")
+
+-- "q" のマクロ記録を無効化
+vim.keymap.set("n", "q", "<Nop>")
