@@ -128,7 +128,6 @@ alias gm='gitmoji -c'
 alias gpfirst='git push -u origin HEAD' # HEAD にすることで「今いるブランチ名を自動で使う」動作に
 alias gp='git push'
 alias pull='git pull'
-alias ghq-pull='ghq list | ghq get --update -p --parallel'
 
 export PATH="$HOME/.local/bin:$PATH"
 
