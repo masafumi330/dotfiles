@@ -79,20 +79,11 @@ local function get_system_stats()
 	if now - last_stat_update < 10 then
 		return cached_stats
 	end
-	-- top -l 1 -n 0: プロセス一覧なしでシステム統計のみ取得
-	-- PhysMem行: "22G used (...), 9881M unused." → 使用/総量からパーセント計算
+	-- CPU: top、MEM: memory_pressure の "free%" を 100 - free で使用率に変換
 	local ok, stdout, _ = wezterm.run_child_process({
 		"bash",
 		"-c",
-		[[top -l 1 -n 0 | awk '
-      /CPU usage/ {cpu=$3}
-      /PhysMem/ {
-        u=$2; n=$8
-        if(u~/G/) ug=u+0; else ug=(u+0)/1024
-        if(n~/G/) ng=n+0; else ng=(n+0)/1024
-        mem=int(ug/(ug+ng)*100)"%"
-      }
-      END {print cpu" "mem}']],
+		[[cpu=$(top -l 1 -n 0 | awk '/CPU usage/ {print $3}'); mem=$(memory_pressure | awk '/memory free percentage/ {gsub(/%/,"",$NF); print 100-$NF"%"}'); echo "$cpu $mem"]],
 	})
 	if ok then
 		local parts = {}
