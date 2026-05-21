@@ -32,8 +32,8 @@ local keys = {
 	{ key = "j", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 	-- Ctrl+B, S: Show Workspace
 	{
-		mods = "LEADER",
-		key = "s",
+		mods = "CTRL",
+		key = "w",
 		action = wezterm.action_callback(function(win, pane)
 			-- workspace のリストを作成（現在のworkspaceを先頭に）
 			local current = wezterm.mux.get_active_workspace()

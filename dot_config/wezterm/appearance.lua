@@ -65,11 +65,53 @@ local appearance = {
 	color_scheme = "Tokyo Night",
 
 	default_cursor_style = "BlinkingBlock",
+
+	initial_cols = 220,
+	initial_rows = 50,
 }
 
--- -- Show current workspace name on right-tab-bar
+-- System stats (CPU/Memory) with 5s cache to avoid frequent process spawning
+local last_stat_update = 0
+local cached_stats = { cpu = "...", mem = "..." }
+
+local function get_system_stats()
+	local now = os.time()
+	if now - last_stat_update < 10 then
+		return cached_stats
+	end
+	-- top -l 1 -n 0: プロセス一覧なしでシステム統計のみ取得
+	-- PhysMem行: "22G used (...), 9881M unused." → 使用/総量からパーセント計算
+	local ok, stdout, _ = wezterm.run_child_process({
+		"bash",
+		"-c",
+		[[top -l 1 -n 0 | awk '
+      /CPU usage/ {cpu=$3}
+      /PhysMem/ {
+        u=$2; n=$8
+        if(u~/G/) ug=u+0; else ug=(u+0)/1024
+        if(n~/G/) ng=n+0; else ng=(n+0)/1024
+        mem=int(ug/(ug+ng)*100)"%"
+      }
+      END {print cpu" "mem}']],
+	})
+	if ok then
+		local parts = {}
+		for part in stdout:gmatch("%S+") do
+			table.insert(parts, part)
+		end
+		cached_stats = { cpu = parts[1] or "?", mem = parts[2] or "?" }
+	end
+	last_stat_update = now
+	return cached_stats
+end
+
+-- Show system stats + workspace name on right-tab-bar
 wezterm.on("update-right-status", function(window, pane)
+	local stats = get_system_stats()
 	window:set_right_status(wezterm.format({
+		{ Background = { Color = "#2a2a3d" } },
+		{ Foreground = { Color = "#888888" } },
+		{ Text = "  CPU:" .. stats.cpu .. "  MEM:" .. stats.mem .. "  " },
 		{ Background = { Color = WORKSPACE_BAR_COLOR_BG } },
 		{ Foreground = { Color = WORKSPACE_BAR_COLOR_FG } },
 		{ Text = " " .. window:active_workspace() .. " " },
