@@ -8,6 +8,7 @@ description: Stage meaningful diffs and create commits with WHY-focused messages
 - pre-commit設定時は検査が通る状態でコミット (バイパス禁止)
 - 意味のある最小単位でコミット
   - `git status --short --untracked-files` で確認し **`--untracked-files=no` を使わない**
+- コミットメッセージは英語でシンプルに書くこと 例) feat: add property to User type
 - メッセージが複数の意味を示す時は分割
 - レビュー対応を「レビュー修正」等で1コミットに纏めない。各修正を個別の意味単位でコミットする
 - コミットメッセージのprefixはcommitlint.config.cjsファイルが存在するプロジェクトではこのルールに従うこと
