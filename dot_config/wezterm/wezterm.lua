@@ -3,6 +3,9 @@ local config = wezterm.config_builder()
 
 config.use_ime = true
 
+-- ウィンドウを閉じる前に確認ダイアログを表示（誤操作防止）
+config.window_close_confirmation = "AlwaysPrompt"
+
 -- オーバーレイペインでコマンドを実行するヘルパー関数
 local function spawn_overlay_pane(command)
 	return wezterm.action_callback(function(window, pane)

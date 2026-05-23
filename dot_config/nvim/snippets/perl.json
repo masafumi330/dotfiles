@@ -1,0 +1,13 @@
+{
+  "Data::Dumper::AutoEncode debug": {
+    "prefix": "dump",
+    "body": [
+      "use Data::Dumper::AutoEncode;",
+      "    local \\$Data::Dumper::Sortkeys = 1;",
+      "    warn eDumper 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv';",
+      "    warn eDumper $1;",
+      "    warn eDumper '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^';"
+    ],
+    "description": "Data::Dumper::AutoEncode でデバッグ出力"
+  }
+}

@@ -25,6 +25,12 @@ local keys = {
 		mods = "SUPER",
 		action = act.CloseCurrentPane({ confirm = true }),
 	},
+	-- Cmd+Q: 誤操作防止のため無効化
+	{
+		key = "q",
+		mods = "SUPER",
+		action = act.DisableDefaultAssignment,
+	},
 	-- Vim風Pane移動
 	{ key = "h", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
