@@ -1,0 +1,8 @@
+[include]
+  path = ~/.gitconfig.local
+
+[push]
+	autoSetupRemote = true
+
+[ghq]
+	root = ~/src
