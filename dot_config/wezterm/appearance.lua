@@ -10,7 +10,7 @@ local WORKSPACE_BAR_COLOR_FG = "#FFFFFF"
 local appearance = {
 	-- window title
 	-- タイトルバーを非表示
-	window_decorations = "RESIZE", -- NONE, TITLE, TITLE | RESIZE, RESIZE, INTEGRATED_BUTTONS
+	window_decorations = "TITLE | RESIZE", -- NONE, TITLE, TITLE | RESIZE, RESIZE, INTEGRATED_BUTTONS
 	window_close_confirmation = "NeverPrompt", -- AlwaysPrompt or NeverPrompt
 
 	-- Pane

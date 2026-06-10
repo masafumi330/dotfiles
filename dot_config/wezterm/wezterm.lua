@@ -3,6 +3,9 @@ local config = wezterm.config_builder()
 
 config.use_ime = true
 
+-- フォントサイズ変更時にウィンドウサイズを変えない
+config.adjust_window_size_when_changing_font_size = false
+
 -- ウィンドウを閉じる前に確認ダイアログを表示（誤操作防止）
 config.window_close_confirmation = "AlwaysPrompt"
 
