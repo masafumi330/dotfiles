@@ -6,3 +6,12 @@
 
 [ghq]
 	root = ~/src
+
+[core]
+  pager = cat
+
+[fetch]
+  prune = true
+
+[pull]
+	rebase = true

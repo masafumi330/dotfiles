@@ -59,12 +59,14 @@
       "Write(.env*)"
     ],
     "ask": [
+      "Bash(go build:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
       "Bash(git commit:*)",
       "Bash(gh pr create:*)",
       "Bash(gh issue create:*)",
       "Bash(gh release create:*)",
+      "Bash(python3 *)",
       "Bash(aws s3 cp:*)",
       "Bash(aws s3 sync:*)",
       "Bash(aws s3 mv:*)",
@@ -108,7 +110,8 @@
   },
   "enabledPlugins": {
     "lua-lsp@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "anthropic-agent-skills": {
@@ -119,5 +122,10 @@
     }
   },
   "effortLevel": "medium",
-  "theme": "dark"
+  "voice": {
+    "enabled": false,
+    "mode": "hold"
+  },
+  "theme": "dark",
+  "voiceEnabled": false
 }
