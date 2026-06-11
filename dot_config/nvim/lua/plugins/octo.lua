@@ -6,6 +6,11 @@ return {
 		picker = "snacks",
 		-- bare Octo command opens picker of commands
 		enable_builtin = true,
+		mappings = {
+			review_diff = {
+				toggle_viewed = { lhs = "<leader><space>", desc = "toggle viewer viewed state" },
+			},
+		},
 	},
 	keys = {
 		{

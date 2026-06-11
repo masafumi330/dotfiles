@@ -1,7 +1,7 @@
-# export ZSH="$HOME/.oh-my-zsh"
-#
-# ZSH_THEME="robbyrussell"
-#
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
 # plugins=(
 #   git
 #   docker
@@ -11,10 +11,10 @@
 #
 # fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # autoload -U compinit && compinit
-#
-# source $ZSH/oh-my-zsh.sh
-#
-# RPROMPT='%F{white}[%T%f]'
+
+source $ZSH/oh-my-zsh.sh
+
+RPROMPT='%F{white}[%T%f]'
 
 ## Aliases -------------------------------------------------------------------
 # Editor
@@ -54,9 +54,10 @@ function _ghq_fzf_widget() {
 }
 zle -N _ghq_fzf_widget       # 関数を ZLE ウィジェットとして登録
 bindkey '^g' _ghq_fzf_widget # Ctrl+G に割り当て
+# bindkey -e # zshのキーバインドをEmacsモードに切り替える
 
 # apply shell integration
-# source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
+source /Applications/WezTerm.app/Contents/Resources/wezterm.sh
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
@@ -65,4 +66,4 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Starship prompt -------------------------------------------------------
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
