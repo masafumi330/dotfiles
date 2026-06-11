@@ -8,6 +8,9 @@ local WORKSPACE_BAR_COLOR_BG = "#7F77DD"
 local WORKSPACE_BAR_COLOR_FG = "#FFFFFF"
 
 local appearance = {
+	scrollback_lines = 3000, -- How many lines of scrollback you want to retain per tab
+	enable_scroll_bar = true,
+
 	-- window title
 	-- タイトルバーを非表示
 	window_decorations = "TITLE | RESIZE", -- NONE, TITLE, TITLE | RESIZE, RESIZE, INTEGRATED_BUTTONS
@@ -57,7 +60,13 @@ local appearance = {
 		tab_bar = {
 			inactive_tab_edge = "none",
 		},
-		split = "#ecfa52",
+		split = "#657175",
+		scrollbar_thumb = "#657175",
+
+		quick_select_label_bg = { Color = "peru" },
+		quick_select_label_fg = { Color = "#ffffff" },
+		quick_select_match_bg = { AnsiColor = "Navy" },
+		quick_select_match_fg = { Color = "#ffffff" },
 	},
 
 	font = wezterm.font("HackGen Console NF"),

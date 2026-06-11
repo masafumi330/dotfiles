@@ -10,6 +10,9 @@ return {
 			review_diff = {
 				toggle_viewed = { lhs = "<leader><space>", desc = "toggle viewer viewed state" },
 			},
+			file_panel = {
+				toggle_viewed = { lhs = "<leader><space>", desc = "toggle viewer viewed state" },
+			},
 		},
 	},
 	keys = {
