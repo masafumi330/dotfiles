@@ -2,18 +2,48 @@
 import = ["./tokyo-night-storm.toml"]
 
 [window]
-padding = { y = 30 }
+padding = { y = 20 }
 decorations = "Buttonless"
 opacity = 0.95
 startup_mode = "Maximized"
 option_as_alt = "Both"
 
 [font]
-normal = { family = "Hack Nerd Font", style = "Regular" }
-bold   = { family = "Hack Nerd Font", style = "Bold" }
-italic = { family = "Hack Nerd Font", style = "Italic" }
+normal      = { family = "Hack Nerd Font" }
+bold        = { family = "Hack Nerd Font" }
+italic      = { family = "Hack Nerd Font" }
+bold_italic = { family = "Hack Nerd Font" }
 size = 14.0
 
 [terminal]
-# shell = { program = "/bin/zsh", args = [""] }
+shell = { program = "/bin/zsh", args = ["-l", "-c", "tmux a -t nippo || tmux new -s nippo"] }
+#
+[keyboard]
+bindings = [
+  # エスケープシーケンス \u0002 = Ctrl-B (tmux default prefix)
 
+  { key = "T", mods = "Command", chars = "\u0002c" },   # Cmd+T: 新しいウィンドウ作成
+  { key = "W", mods = "Command", chars = "\u0002&" },   # Cmd+W: ウィンドウを閉じる
+  { key = "Tab", mods = "Control", chars = "\u0002n" }, # Ctrl+Tab: 次のタブ
+
+  { key = "D", mods = "Command", chars = "\u0002%" },       # Cmd+D: 縦分割（左右）
+  { key = "D", mods = "Command|Shift", chars = "\u0002\"" }, # Cmd+Shift+D: 横分割（上下）
+
+  { key = "K", mods = "Control|Shift", chars = "\u0002\u001b[A" }, # Cmd+J/K/L/H: ペイン移動
+  { key = "J", mods = "Control|Shift", chars = "\u0002\u001b[B" },
+  { key = "L", mods = "Control|Shift", chars = "\u0002\u001b[C" },
+  { key = "H", mods = "Control|Shift", chars = "\u0002\u001b[D" },
+
+  { key = "n", mods = "Control|Shift", chars = "\u0002N" }, # Ctrl+Shift+N: 新しいセッションの作成
+  { key = "r", mods = "Control|Shift", chars = "\u0002R" }, # Chrl+Shift+R: セッション名の変更
+
+  { key = "1", mods = "Command", chars = "\u00021" }, # Cmd+1-9: セッション番号で移動
+  { key = "2", mods = "Command", chars = "\u00022" },
+  { key = "3", mods = "Command", chars = "\u00023" },
+  { key = "4", mods = "Command", chars = "\u00024" },
+  { key = "5", mods = "Command", chars = "\u00025" },
+  { key = "6", mods = "Command", chars = "\u00026" },
+  { key = "7", mods = "Command", chars = "\u00027" },
+  { key = "8", mods = "Command", chars = "\u00028" },
+  { key = "9", mods = "Command", chars = "\u00029" },
+]

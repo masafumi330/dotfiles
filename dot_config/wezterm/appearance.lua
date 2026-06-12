@@ -8,7 +8,7 @@ local WORKSPACE_BAR_COLOR_BG = "#7F77DD"
 local WORKSPACE_BAR_COLOR_FG = "#FFFFFF"
 
 local appearance = {
-	scrollback_lines = 3000, -- How many lines of scrollback you want to retain per tab
+	scrollback_lines = 500, -- How many lines of scrollback you want to retain per tab
 	enable_scroll_bar = true,
 
 	-- window title
@@ -26,12 +26,9 @@ local appearance = {
 	},
 
 	-- 透過度：0.0（完全透過）〜 1.0（不透明）
-	window_background_opacity = 0.7,
-	macos_window_background_blur = 50,
+	window_background_opacity = 0.9,
+	-- macos_window_background_blur = 50,
 
-	-- Tab
-	hide_tab_bar_if_only_one_tab = true,
-	-- tab_bar_at_bottom = true,
 	show_new_tab_button_in_tab_bar = false,
 	tab_max_width = 30,
 	use_fancy_tab_bar = true,
@@ -80,43 +77,64 @@ local appearance = {
 }
 
 -- System stats (CPU/Memory) with 5s cache to avoid frequent process spawning
-local last_stat_update = 0
-local cached_stats = { cpu = "...", mem = "..." }
+-- local last_stat_update = 0
+-- local cached_stats = { cpu = "...", mem = "..." }
+--
+-- local function get_system_stats()
+-- 	local now = os.time()
+-- 	if now - last_stat_update < 10 then
+-- 		return cached_stats
+-- 	end
+-- 	-- CPU: top、MEM: memory_pressure の "free%" を 100 - free で使用率に変換
+-- 	local ok, stdout, _ = wezterm.run_child_process({
+-- 		"bash",
+-- 		"-c",
+-- 		[[cpu=$(top -l 1 -n 0 | awk '/CPU usage/ {print $3}'); mem=$(memory_pressure | awk '/memory free percentage/ {gsub(/%/,"",$NF); print 100-$NF"%"}'); echo "$cpu $mem"]],
+-- 	})
+-- 	if ok then
+-- 		local parts = {}
+-- 		for part in stdout:gmatch("%S+") do
+-- 			table.insert(parts, part)
+-- 		end
+-- 		cached_stats = { cpu = parts[1] or "?", mem = parts[2] or "?" }
+-- 	end
+-- 	last_stat_update = now
+-- 	return cached_stats
+-- end
+--
+-- Show workspace list on left status
+wezterm.on("update-status", function(window, _)
+	local workspaces = wezterm.mux.get_workspace_names()
+	local active = window:active_workspace()
 
-local function get_system_stats()
-	local now = os.time()
-	if now - last_stat_update < 10 then
-		return cached_stats
-	end
-	-- CPU: top、MEM: memory_pressure の "free%" を 100 - free で使用率に変換
-	local ok, stdout, _ = wezterm.run_child_process({
-		"bash",
-		"-c",
-		[[cpu=$(top -l 1 -n 0 | awk '/CPU usage/ {print $3}'); mem=$(memory_pressure | awk '/memory free percentage/ {gsub(/%/,"",$NF); print 100-$NF"%"}'); echo "$cpu $mem"]],
-	})
-	if ok then
-		local parts = {}
-		for part in stdout:gmatch("%S+") do
-			table.insert(parts, part)
+	local items = {}
+	for i, name in ipairs(workspaces) do
+		if name == active then
+			table.insert(items, { Background = { Color = WORKSPACE_BAR_COLOR_BG } })
+			table.insert(items, { Foreground = { Color = WORKSPACE_BAR_COLOR_FG } })
+			table.insert(items, { Attribute = { Intensity = "Bold" } })
+			table.insert(items, { Text = " " .. i .. ":" .. name .. " " })
+			table.insert(items, "ResetAttributes")
+		else
+			table.insert(items, { Background = { Color = "#2a2a3d" } })
+			table.insert(items, { Foreground = { Color = "#888888" } })
+			table.insert(items, { Text = " " .. i .. ":" .. name .. " " })
+			table.insert(items, "ResetAttributes")
 		end
-		cached_stats = { cpu = parts[1] or "?", mem = parts[2] or "?" }
 	end
-	last_stat_update = now
-	return cached_stats
-end
+
+	window:set_left_status(wezterm.format(items))
+end)
 
 -- Show system stats + workspace name on right-tab-bar
-wezterm.on("update-right-status", function(window, pane)
-	local stats = get_system_stats()
-	window:set_right_status(wezterm.format({
-		{ Background = { Color = "#2a2a3d" } },
-		{ Foreground = { Color = "#888888" } },
-		{ Text = "  CPU:" .. stats.cpu .. "  MEM:" .. stats.mem .. "  " },
-		{ Background = { Color = WORKSPACE_BAR_COLOR_BG } },
-		{ Foreground = { Color = WORKSPACE_BAR_COLOR_FG } },
-		{ Text = " " .. window:active_workspace() .. " " },
-	}))
-end)
+-- wezterm.on("update-right-status", function(window, pane)
+-- 	local stats = get_system_stats()
+-- 	window:set_right_status(wezterm.format({
+-- 		{ Background = { Color = "#2a2a3d" } },
+-- 		{ Foreground = { Color = "#888888" } },
+-- 		{ Text = "  CPU:" .. stats.cpu .. "  MEM:" .. stats.mem .. "  " },
+-- 	}))
+-- end)
 
 -- Color Active tab
 local SOLID_LEFT_CIRCLE = wezterm.nerdfonts.ple_left_half_circle_thick

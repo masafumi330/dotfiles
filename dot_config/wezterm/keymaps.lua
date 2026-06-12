@@ -90,6 +90,20 @@ local keys = {
 	},
 }
 
+-- Cmd+数字 でWorkspace移動（1〜9）
+for i = 1, 9 do
+	table.insert(keys, {
+		key = tostring(i),
+		mods = "SUPER",
+		action = wezterm.action_callback(function(window, pane)
+			local workspaces = wezterm.mux.get_workspace_names()
+			if workspaces[i] then
+				window:perform_action(act.SwitchToWorkspace({ name = workspaces[i] }), pane)
+			end
+		end),
+	})
+end
+
 function module.apply_to_config(config)
 	config.leader = leader
 	config.keys = keys

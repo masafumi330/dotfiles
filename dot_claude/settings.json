@@ -127,5 +127,6 @@
     "mode": "hold"
   },
   "theme": "dark",
+  "editorMode": "vim",
   "voiceEnabled": false
 }
