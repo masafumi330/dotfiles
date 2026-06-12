@@ -1,0 +1,26 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$time\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$node\
+$golang\
+$cmd_duration\
+$line_break\
+$character"""
+
+[time]
+disabled = false
+format = '[\[$time\]](white) '
+
+[cmd_duration]
+min_time = 5_000
+format = "took [$duration](yellow) "
+show_notifications = true
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
